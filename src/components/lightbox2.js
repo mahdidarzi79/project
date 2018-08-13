@@ -14,8 +14,6 @@ const {width:devicewidth ,height:deviceheight}=Dimensions.get('window');
         return (
             <View style={{ width:300 , height:300, justifyContent: 'center' , alignItems: 'center' , backgroundColor : 'white' , borderRadius : 4}}>
 
-
-
 <Text style={{padding:25,marginLeft:20,marginRight:20,lineHeight:24}} >سلام به شما کاربر عزیز ما تیم برنامه نویسی دوستدار دانش هستیم که  کارما توسعه و ساخت اپلیکیشن های موبایل با فریم ورک ریکت نیتیو است</Text>
                 
                
