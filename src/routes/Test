@@ -1,0 +1,41 @@
+
+import React, { Component } from 'react';
+import { View,Text} from 'native-base';
+import { Router,Scene,Lightbox } from 'react-native-router-flux';
+import homepage from './components/homepage';
+import breackfast from './components/breackfast';
+import breackfast2 from './components/breackfast2';
+import BaseLightbox from './components/lightbox/BaseLightbox';
+import lightbox2 from './components/lightbox2';
+import page2 from './routes/page2';
+
+
+
+
+
+ 
+
+
+export default class app extends Component {
+  render() {
+      return (
+          <Router>
+              <Lightbox>
+                  <Scene key="root" hideNavBar>
+                      <Scene key="homepage" component={homepage} initial  title="homepage" />
+                      <Scene key="page2" component={page2}   />
+                      <Scene key="breackfast" component={breackfast} initial  />
+                      <Scene key="breackfast2" component={breackfast2}   />
+                  </Scene>
+
+                  <Scene key="BaseLightbox" component={BaseLightbox} />
+                  
+                  
+              </Lightbox>
+          </Router>
+      )
+  }
+}
+
+
+
