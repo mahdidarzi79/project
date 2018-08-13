@@ -1,0 +1,58 @@
+import React from 'react';
+import { AsyncStorage,FlatList } from 'react-native';
+import {Container, Header, Right, Button, Content, Text, Left, Icon , View} from 'native-base';
+
+import { Actions } from 'react-native-router-flux';
+import Product from './Product';
+
+
+export default class Home extends React.Component {
+    componentWillMount() {
+        this.state = {
+            products : [],
+            page : 1
+        }
+
+        this.getProductRequest();
+    }
+
+
+    render() {
+        return (
+            <Container>
+                <Header style={{ backgroundColor : '#34495e'}} androidStatusBarColor="#2c3e50" iosBarStyle="light-content">
+                    <Left>
+                        <Icon name="md-menu" onPress={() => Actions.drawerOpen() } style={{ color : 'white' , fontWeight : 500 }}/>
+                    </Left>
+                    <Right>
+                        <Text style={{ fontFamily : 'IRANSansMobile' , color: 'white'}}>صفحه اصلی</Text>
+                    </Right>
+                </Header>
+                <Product />
+               
+               
+               
+            </Container>
+        )
+    }
+    renderItem({item}){
+        return <Product product={item}/>
+
+    }
+    // renderItem({ item }) {
+    //     return <Product product={item}/>
+    // }
+
+
+    getProductRequest() {
+        fetch(`http://roocket.org/api/products?page=${this.state.page}`)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({
+                    products :json.data.data
+                })
+            })
+            .catch(error => console.log(error))
+        
+    }
+}

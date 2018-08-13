@@ -1,0 +1,47 @@
+
+import React, { Component } from 'react';
+import { Container , Spinner , Text   ,Header ,View , Left , Button, Right, Content, Form, Item, Icon, Input } from 'native-base';
+
+
+
+export default class Login extends Component {
+  render() {
+    return (
+      <Container>
+
+<Header style={{backgroundColor : '#34495e',} } androidStatusBarColor='#2c3e50' iosBarStyle="light-content" >
+<Left>
+    <Button transparent={.1}  style={{backgroundColor : '#34495e', } }>
+<Text  style={{color:'white',}}>
+      عضویت
+</Text>
+      </Button>
+  </Left>
+  <Right>
+    <Button transparent style={{backgroundColor : '#34495e',} }>
+<Text  style={{color:'white',}}>
+      ورود
+</Text>
+      </Button>
+  </Right>
+  </Header>
+  <Content>
+<Form>
+<Item rounded>
+<Input placeholder='icon texbx' />
+  <Icon active name='md-mail'/>
+
+</Item>
+<Item rounded>
+<Input placeholder='iconalignment texbox' />
+<Icon active name='md-key'/>
+</Item> 
+  </Form>
+
+
+  </Content>
+        </Container>
+    );
+  }
+}
+

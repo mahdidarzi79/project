@@ -1,0 +1,111 @@
+
+import React, { Component } from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Animated,
+  Easing,Button
+} from 'react-native';
+
+
+
+
+
+ 
+export default class app extends Component {
+
+  constructor(props) {
+    super(props);
+this.animateValue1=new Animated.Value(0);
+this.animateValue2=new Animated.Value(0);
+this.animateValue3=new Animated.Value(0);
+  
+}
+
+componentWillMount() {
+    this.animate();
+}
+animate(){
+  this.animateValue1.setValue(0);
+  this.animateValue2.setValue(0);
+  this.animateValue3.setValue(0);
+  const creacteanimation=(Value,duration,easing,delay)=> Animated.timing(Value,{
+    toValue:1,
+    duration,
+    easing,
+    delay,
+    
+    
+        })
+  Animated.parallel([
+    creacteanimation(this.animateValue1,2000,Easing.ease),
+    creacteanimation(this.animateValue2,1000,Easing.ease,1000),
+    creacteanimation(this.animateValue3,1000,Easing.ease,2000),
+    
+
+
+
+
+
+  ]).start();
+
+
+
+
+
+
+
+}
+  render() {
+    
+
+
+    const introButton=this.animateValue1.interpolate({
+      inputRange:[0,1,],
+      outputRange:[-600,20,],
+
+    });
+    const spinText=this.animateValue2.interpolate({
+      inputRange:[0,1],
+      outputRange:['0deg','720deg'],
+
+    });
+    const scaleText=this.animateValue1.interpolate({
+      inputRange:[0,1],
+      outputRange:[0.5,1.5],
+    });
+    return (
+      <View style={{ flex : 1 , justifyContent: 'center' , alignItems: 'center'}}>
+     
+
+<Animated.View style={{ margin:10,transform:[{scale:scaleText}]}} >
+          <Text>WELCOME TO REACTNATIVE</Text>
+      </Animated.View>
+
+
+<Animated.View style={{ margin:10,transform:[{rotate:spinText}]}} >
+          <Text>Welcome to roocket</Text>
+      </Animated.View>
+
+ <Animated.View  style={{marginTop:20,top:introButton}}>
+           <Button 
+               title="Click Here To Start"
+               onPress={()=>this.animate()}
+               />
+       </Animated.View>
+      
+
+
+   </View>
+
+      
+  
+    )
+  }
+}
+
+
+
