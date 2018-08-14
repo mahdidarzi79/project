@@ -1,3 +1,3 @@
 # project
-on app for eveyone which coocking in home
+one app for eveyone which coocking in home
 
