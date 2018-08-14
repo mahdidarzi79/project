@@ -4,7 +4,7 @@ import { Container, Header, Content, Footer, CardItem, Input, Button, Text, View
 
 import {
  
-  ImageBackground,StyleSheet,StatusBar,Image,FlatList
+  ImageBackground,StyleSheet,StatusBar,Image,FlatList,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 

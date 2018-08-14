@@ -12,7 +12,7 @@ const {width:devicewidth ,height:deviceheight}=Dimensions.get('window');
         // const {children}=this.propsss;
        // const {children}=this.propsss;
        // const {children}=this.propsss;// const {children}=this.propsssas;
-       //sgit 
+       //sgit vvhjvhvj
        
         return (
             <View style={{ width:300 , height:300, justifyContent: 'center' , alignItems: 'center' , backgroundColor : 'white' , borderRadius : 4}}>
